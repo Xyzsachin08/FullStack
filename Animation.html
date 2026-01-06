@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All in One Animation</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 30px;
+        }
+
+        /* 1. Fade Text */
+        h1 {
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 2. Hover Button */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: darkgreen;
+            transform: scale(1.1);
+        }
+
+        /* 3. Moving Box */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            margin-top: 30px;
+            position: relative;
+            animation: moveBox 2s infinite alternate;
+        }
+
+        @keyframes moveBox {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+        /* 4. Loading Spinner */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid lightgray;
+            border-top: 5px solid red;
+            border-radius: 50%;
+            margin-top: 30px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* 5. Card Hover */
+        .card {
+            width: 200px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 0 10px gray;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px gray;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin-top: 30px;
+            position: relative;
+            animation: moveBox 2s infinite alternate;
+
+        }
+
+
+        @keyframes moveBox {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to Animation</h1>
+
+    <button>Hover Me</button>
+
+    <div class="box"></div>
+
+    <div class="loader"></div>
+
+    <div class="card">
+        <h3>Card</h3>
+        <p>Hover to lift</p>
+    </div>
+
+    <div class="box1"></div>
+
+</body>
+
+</html>

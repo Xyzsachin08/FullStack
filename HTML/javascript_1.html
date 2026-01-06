@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Addition</title>
+</head>
+
+<body>
+    Number A <input type="text" id="text1">
+    <br><br>
+
+    Number B <input type="text" id="text2">
+    <br><br>
+
+    <button onclick="sachin()">+</button>
+    <br><br>
+
+    Result <input type="text" id="text3">
+</body>
+
+<script>
+    function sachin() {
+        let a = Number(document.getElementById("text1").value);
+        let b = Number(document.getElementById("text2").value);
+        let c = a + b;
+        document.getElementById("text3").value = c;
+    }
+</script>
+
+</html>

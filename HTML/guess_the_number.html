@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guess the Number</title>
+</head>
+
+<body>
+    <h2>Guess the Number (1 to 10)</h2>
+
+    <input type="number" id="guess" placeholder="Enter number">
+    <button onclick="check()">Check</button>
+
+    <p id="result"></p>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+        function check() {
+            let userGuess = Number(document.getElementById("guess").value);
+
+            if (userGuess === randomNumber) {
+                document.getElementById("result").innerText = " Correct Guess!";
+            }
+            else if (userGuess > randomNumber) {
+                document.getElementById("result").innerText = "Too High!";
+            }
+            else {
+                document.getElementById("result").innerText = "Too Low!";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>sachin Calculator</title>
+</head>
+
+<body>
+    <h1><i><b></b>Simple Calculator</b></i></h1>
+    Number A: <input type="text" id="text1">
+    <br><br>
+    Number B: <input type="text" id="text2">
+    <br><br>
+
+
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <br><br>
+
+    Result: <input type="text" id="text3" readonly>
+</body>
+
+<script>
+    function calculate(operator) {
+
+        let a = Number(document.getElementById("text1").value);
+        let b = Number(document.getElementById("text2").value);
+        let result;
+
+        switch (operator) {
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+            default:
+                result = "Invalid operation";
+        }
+
+        document.getElementById("text3").value = result;
+    }
+</script>
+
+</html>

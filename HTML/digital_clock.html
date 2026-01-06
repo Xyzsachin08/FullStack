@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Analog Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f2f2f2;
+        }
+
+        .clock {
+            width: 300px;
+            height: 300px;
+            border: 10px solid black;
+            border-radius: 50%;
+            position: relative;
+            background: white;
+        }
+
+        /* Numbers */
+        .number {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .n12 {
+            top: 10px;
+            left: 135px;
+        }
+
+        .n3 {
+            top: 135px;
+            right: 10px;
+        }
+
+        .n6 {
+            bottom: 10px;
+            left: 140px;
+        }
+
+        .n9 {
+            top: 135px;
+            left: 10px;
+        }
+
+        /* Hands */
+        .hand {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: left;
+            transform: rotate(90deg);
+        }
+
+        .hour {
+            width: 70px;
+            height: 6px;
+            background: black;
+        }
+
+        .minute {
+            width: 100px;
+            height: 4px;
+            background: black;
+        }
+
+        .second {
+            width: 120px;
+            height: 2px;
+            background: red;
+        }
+
+        /* Watch center symbol */
+        .center {
+            width: 14px;
+            height: 14px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="clock">
+        <!-- Numbers -->
+        <div class="number n12">12</div>
+        <div class="number n3">3</div>
+        <div class="number n6">6</div>
+        <div class="number n9">9</div>
+
+        <!-- Hands -->
+        <div class="hand hour" id="hour"></div>
+        <div class="hand minute" id="minute"></div>
+        <div class="hand second" id="second"></div>
+
+        <!-- Watch symbol -->
+        <div class="center"></div>
+    </div>
+
+    <script>
+        function runClock() {
+            let now = new Date();
+
+            let sec = now.getSeconds();
+            let min = now.getMinutes();
+            let hr = now.getHours();
+
+            let secDeg = sec * 6;
+            let minDeg = min * 6;
+            let hrDeg = hr * 30 + min / 2;
+
+            document.getElementById("second").style.transform = `rotate(${secDeg}deg)`;
+            document.getElementById("minute").style.transform = `rotate(${minDeg}deg)`;
+            document.getElementById("hour").style.transform = `rotate(${hrDeg}deg)`;
+        }
+
+        setInterval(runClock, 1000);
+        runClock();
+    </script>
+
+</body>
+
+</html>

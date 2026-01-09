@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Student Management System</h1>
+
+    <div class="container">
+        <div class="form-box">
+            <h2>Add Student</h2>
+
+            <input type="text" id="name" placeholder="Student Name">
+            <input type="number" id="age" placeholder="Age">
+            <input type="text" id="course" placeholder="Course">
+
+            <button onclick="addStudent()">Add Student</button>
+        </div>
+
+        <div class="table-box">
+            <h2>Student List</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTable">
+                    <!-- Data comes from JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

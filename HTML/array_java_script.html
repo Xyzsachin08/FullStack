@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var fruits = ["apple", "banana", "oranage", "grape"];
+        fruits.push("kiwi");
+        console.log(fruits);
+        console.log(fruits[1]);
+
+
+
+        const user = {
+            name: "sachin",
+            age: 24,
+            city: "pune"
+        };
+        console.log(user.name, user.age, user.city);
+
+
+        let x = [1, 2];
+        let y = [3, 4];
+
+        let z = [...x, ...y];
+        console.log(z);
+
+
+
+
+        var ans = new Promise((resolve, reject) => {
+            if (false) {
+                return resolve()
+            }
+            else {
+                return reject()
+            }
+        });
+
+        ans.then(() => { console.log("resolved") })
+            .catch(() => { console.log("rejected") });
+
+
+
+
+
+        var checkNum = new Promise((resolve, reject) => {
+            let num = 7;
+
+            if (num > 5) {
+                return resolve()
+            } else {
+                return reject()
+            }
+        });
+        checkNum
+            .then((value) => {
+                console.log(value + " is greater than 5");
+            })
+            .catch((value) => {
+                console.log(value + " is NOT greater than 5");
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

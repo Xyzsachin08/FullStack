@@ -39,6 +39,52 @@
         </tr>
         {% endfor %}
 
+    <h2>Add Contact</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name" required><br><br>
+    <input type="email" name="email" placeholder="Email" required><br><br>
+    <input type="text" name="contact_number" placeholder="Contact" required><br><br>
+    <button type="submit">Save</button>
+</form>
+
+<hr>
+
+<h2>Contact List</h2>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Action</th>
+    </tr>
+
+    {% for c in contacts %}
+    <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.contact_number }}</td>
+        <td>
+            <a href="/edit/{{ c.id }}/">Edit</a> |
+            <a href="/delete/{{ c.id }}/">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<h2>Edit Contact</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{ contact.name }}" required><br><br>
+    <input type="email" name="email" value="{{ contact.email }}" required><br><br>
+    <input type="text" name="contact_number" value="{{ contact.contact_number }}" required><br><br>
+    <button type="submit">Update</button>
+</form>
+
+
+
 </body>
 
 </html>
